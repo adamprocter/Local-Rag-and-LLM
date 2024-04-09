@@ -1,11 +1,13 @@
 # Local Rag and LLM
 
+Brackets refer to line numbers in python file.
+
 ## for mac OS
 
 - Install https://ollama.com/ and open so it is running (serve)
 - Open terminal and pull in the LLM
 - ollama run llama2
-  - currently uses llama2 as hardcoded in the python script
+  - currently uses llama2 (52) as hardcoded in the python script
 - - You can close terminal as this model is now on your mac
 
 ## wordpress get your posts as JSON
@@ -16,13 +18,14 @@
 
 ## Create a new page
 
-- create a new page on your blog and add the shortcode [wordpress_export_to_json]
+- create a new page on your blog and add just the following shortcode [wordpress_export_to_json]
 - save / visit that page (this will execute the shortcode)
 
   - I got some errors making the page but it was ok.
 
-- Check your "/wp-content" folder for a file "post_content.json".
-  - If the file did not create, try first creating a blank file "post_content.json"(your site may not have permission to create file in the directory, but it may be able to update).
+- Check your "/wp-content" folder for a file "post-content.json".
+- file name is hardcoded into wordpress script (42)
+  - If the file did not create, try first creating a blank file "post-content.json"(your site may not have permission to create file in the directory, but it may be able to update).
 
 ## Run queries against your json file
 
