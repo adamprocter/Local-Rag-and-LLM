@@ -1,9 +1,9 @@
 import requests
 import json
 
-input_file = open('/Users/ap2x07/Desktop/post_content.json')
+input_file = open('/Users/myname/folder/post_content.json')
 corpus_of_documents = json.load(input_file)
-print (corpus_of_documents )
+print(corpus_of_documents)
 # corpus_of_documents = []
 
 # corpus_of_documents = [
