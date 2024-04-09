@@ -13,8 +13,8 @@
  *      1. Create a new page or post in your WordPress site.
  *      2. Add the shortcode [wordpress_export_to_json] to the page.
  *      3. Run the page.
- *      4. Check your "/wp-content" folder for a file "post_content.json".
- *      If the file did not create, try first creating a blank file "post_content.json"
+ *      4. Check your "/wp-content" folder for a file "post-content.json".
+ *      If the file did not create, try first creating a blank file "post-content.json"
  *      (your site may not have permission to create file in the directory, but it may be able to update).
  *
  *      You will now have a JSON formatted file with all the post content of your WordPress site.
