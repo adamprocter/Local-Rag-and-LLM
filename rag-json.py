@@ -36,16 +36,22 @@ def return_response(query, corpus):
     return corpus_of_documents[similarities.index(max(similarities))]
 
 
-user_input = "I like to hike"
+# Get user input for both user preference and prompt text
+user_input = input("Enter your preference / question: ")
+prompt_text = input("Enter the prompt text to use: ")
+
+# user_input = "I like to hike"
 relevant_document = return_response(user_input, corpus_of_documents)
-full_response = []
+
 # https://github.com/jmorganca/ollama/blob/main/docs/api.md
+# Construct the prompt
 prompt = """
-You are a bot that makes recommendations for activities. You answer in very short sentences and do not include extra information.
-This is the recommended activity: {relevant_document}
-The user input is: {user_input}
+{}
+This is the recommended activity: {}
+The user input is: {}
 Compile a recommendation to the user based on the recommended activity and the user input.
-"""
+""".format(prompt_text, relevant_document, user_input)
+
 
 url = 'http://localhost:11434/api/generate'
 data = {
@@ -55,6 +61,7 @@ data = {
 headers = {'Content-Type': 'application/json'}
 response = requests.post(url, data=json.dumps(data),
                          headers=headers, stream=True)
+full_response = []
 try:
     count = 0
     for line in response.iter_lines():
